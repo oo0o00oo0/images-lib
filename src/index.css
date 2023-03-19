@@ -1,8 +1,8 @@
 
-@font-face {
+/* @font-face {
   font-family: NFC;
   src: url(/assets/fonts/NortonFolgateCaps-Medium.woff2)
-}
+} */
 
 
 /** https://www.joshwcomeau.com/css/custom-css-reset/ */
@@ -17,6 +17,7 @@
   2. Remove default margin
 */
 * {
+  font-family: "IBM Plex Mono", monospace;
   margin: 0;
   box-sizing: border-box;
 }
@@ -27,7 +28,8 @@ html, body, #app {
   font-family: NFC;
   height: 100%;
   font-size: 1vw;
-  background-color: #272727;
+  background-color: #f3f3f3;
+  /* background-color: #323232; */
 }
 /*
   Typographic tweaks!
@@ -35,7 +37,7 @@ html, body, #app {
   5. Improve text rendering
 */
 body {
-  background-color: #323232;
+  /* background-color: #f3f3f3; */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
