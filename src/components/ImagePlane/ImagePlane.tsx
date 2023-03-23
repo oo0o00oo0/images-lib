@@ -1,4 +1,3 @@
-import React from "react"
 import { Texture } from "three"
 import SkyLinearBlendMaterial from "../SkyLinearBlendMaterial"
 
@@ -9,7 +8,7 @@ type Props = {
 const ImagePlane = ({ textures }: Props) => {
    return (
       <mesh>
-         <planeGeometry args={[1, 1.5]} />
+         <planeGeometry args={[1, 1.33]} />
          <SkyLinearBlendMaterial textures={textures} />
       </mesh>
    )

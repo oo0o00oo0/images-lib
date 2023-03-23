@@ -18,7 +18,7 @@ const SkyLinearBlendMaterial = ({ textures }: Props) => {
 
    const time = React.useRef(Math.PI / 2)
    const tic = 16
-   const slow = 100
+   const slow = 5
 
    React.useEffect(() => {
       setInterval(() => {

@@ -2,17 +2,24 @@ import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
 import styled from "styled-components/macro"
 import ImagePlane from "../ImagePlane"
-import { useTexture } from "@react-three/drei"
+import { OrbitControls, useTexture } from "@react-three/drei"
+import PixelProcess from "../PixelProcess"
+import { Perf } from "r3f-perf"
+import SimpleShader from "../SimpleShader"
 
 export const TCanvas = () => {
    return (
       <CanvasWr>
          <Canvas
-            camera={{ fov: 45 }}
-            dpr={window.devicePixelRatio}>
+            camera={{ fov: 70 }}
+            // dpr={window.devicePixelRatio}
+            dpr={[1, 2]}>
             <Suspense fallback={null}>
-               <Skies />
+               {/* <Perf minimal /> */}
+               {/* <Skies /> */}
+               <SimpleShader />
             </Suspense>
+            {/* <OrbitControls /> */}
          </Canvas>
       </CanvasWr>
    )
@@ -25,6 +32,29 @@ const Skies = () => {
    const textures = useTexture(urls)
 
    return <ImagePlane textures={textures} />
+
+   // return (
+   //    <group
+   //       scale={2}
+   //       position={[0.5, -0.65, 0]}>
+   //       <PixelProcess
+   //          position={[0, 0, 0]}
+   //          texture={textures[Math.floor(Math.random() * textures.length)]}
+   //       />
+   //       <PixelProcess
+   //          position={[-1, 0, 0]}
+   //          texture={textures[Math.floor(Math.random() * textures.length)]}
+   //       />
+   //       <PixelProcess
+   //          position={[0, 1.1, 0]}
+   //          texture={textures[Math.floor(Math.random() * textures.length)]}
+   //       />
+   //       <PixelProcess
+   //          position={[-1, 1.1, 0]}
+   //          texture={textures[Math.floor(Math.random() * textures.length)]}
+   //       />
+   //    </group>
+   // )
 }
 
 const CanvasWr = styled.div`
