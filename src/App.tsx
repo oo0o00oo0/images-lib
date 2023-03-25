@@ -5,7 +5,6 @@ import styled from "styled-components/macro"
 export const App = () => {
    return (
       <>
-         <Header>HELLOO</Header>
          <TCanvas />
       </>
    )

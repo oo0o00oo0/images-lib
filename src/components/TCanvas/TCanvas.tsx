@@ -8,12 +8,14 @@ import { Perf } from "r3f-perf"
 import SimpleShader from "../SimpleShader"
 
 export const TCanvas = () => {
+   console.log(devicePixelRatio)
+
    return (
       <CanvasWr>
          <Canvas
             camera={{ fov: 70 }}
             // dpr={window.devicePixelRatio}
-            dpr={[1, 2]}>
+         >
             <Suspense fallback={null}>
                {/* <Perf minimal /> */}
                {/* <Skies /> */}
